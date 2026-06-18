@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Paytm — India's Most Trusted Payment App</title>
+    <meta name="description" content="Pay bills, recharge, send money, buy gold, invest and shop online with Paytm. India's largest mobile payments and commerce platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ═══════════════════ AUTH OVERLAY ═══════════════════ -->
+    <div class="auth-screen" id="authScreen">
+        <div class="auth-orb auth-orb-1"></div>
+        <div class="auth-orb auth-orb-2"></div>
+        <div class="auth-orb auth-orb-3"></div>
+        <div class="auth-content">
+            <div class="auth-logo">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00b9f5" />
+                            <stop offset="100%" stop-color="#0068b7" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <h1 class="auth-title">Welcome to NeoPay</h1>
+            <p class="auth-subtitle">The Next-Gen Digital Wallet</p>
+            
+            <form class="auth-form" id="loginForm">
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">📱</span>
+                    <input type="tel" class="auth-input" id="authPhone" placeholder="Enter Mobile Number" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">🔒</span>
+                    <input type="password" class="auth-input" id="authPin" placeholder="Enter 4-digit PIN" pattern="[0-9]{4}" maxlength="4" required>
+                </div>
+                <button type="submit" class="auth-btn">
+                    <span>Secure Sign In</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>New to NeoPay? <a href="#" class="auth-link">Create Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ MAIN APP CONTAINER ═══════════════════ -->
+    <div id="appContainer" style="display: none;">    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <button class="profile-circle" id="profileBtn" aria-label="Open profile">BR</button>
+            <div class="header-greeting">
+                <span class="greeting-name">Hello, User! 👋</span>
+                <span class="greeting-sub">Welcome back</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="header-icon" id="searchToggle" aria-label="Search">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <button class="header-icon" id="darkModeToggle" aria-label="Toggle dark mode">
+                <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="header-icon notif-btn" id="notifToggle" aria-label="Notifications">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span class="notif-badge" id="notifBadge">3</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══════════════════ SEARCH OVERLAY ═══════════════════ -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-bar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchInput" placeholder="Search services, bills, recharges..." autocomplete="off">
+            <button class="search-close" id="searchClose">✕</button>
+        </div>
+        <div class="search-suggestions" id="searchSuggestions">
+            <div class="suggestion-item" data-service="recharge">📱 Mobile Recharge</div>
+            <div class="suggestion-item" data-service="electricity">⚡ Electricity Bill</div>
+            <div class="suggestion-item" data-service="gold">🥇 Buy Gold</div>
+            <div class="suggestion-item" data-service="movies">🎬 Movies & Events</div>
+            <div class="suggestion-item" data-service="loan">💰 Personal Loan</div>
+            <div class="suggestion-item" data-service="credit-score">📊 Free Credit Score</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ NOTIFICATION PANEL ═══════════════════ -->
+    <div class="notif-panel" id="notifPanel">
+        <div class="notif-header">
+            <h3>Notifications</h3>
+            <button class="mark-read-btn" id="markAllRead">Mark all read</button>
+        </div>
+        <div class="notif-list" id="notifList">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- ═══════════════════ PROFILE DRAWER ═══════════════════ -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="profile-drawer" id="profileDrawer">
+        <div class="drawer-header">
+            <div class="drawer-profile">
+                <div class="drawer-avatar">BR</div>
+                <div class="drawer-info">
+                    <h3>User</h3>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+            <button class="drawer-close" id="drawerClose">✕</button>
+        </div>
+        <div class="drawer-upi">
+            <span>UPI ID: c.n@ptyes</span>
+            <button class="copy-btn-sm" id="copyUpiDrawer" aria-label="Copy UPI ID">📋</button>
+        </div>
+        <nav class="drawer-menu">
+            <a href="#" class="drawer-item"><span>👤</span> My Profile</a>
+            <a href="#" class="drawer-item"><span>🏦</span> Bank Accounts</a>
+            <a href="#" class="drawer-item"><span>💳</span> Saved Cards</a>
+            <a href="#" class="drawer-item"><span>📜</span> Transaction History</a>
+            <a href="#" class="drawer-item"><span>🎁</span> Rewards & Cashback</a>
+            <a href="#" class="drawer-item"><span>⚙️</span> Settings</a>
+            <a href="#" class="drawer-item"><span>❓</span> Help & Support</a>
+        </nav>
+        <div class="drawer-footer">
+            <button class="logout-btn">Sign Out</button>
+        </div>
+    </aside>
+
+    <!-- ═══════════════════ MAIN CONTENT ═══════════════════ -->
+    <main class="main-content" id="mainContent">
+
+        <!-- UPI Banner -->
+        <div class="upi-banner animate-in">
+            <div class="upi-left">
+                <div class="upi-lite-badge">UPI Lite</div>
+                <button class="activate-btn" id="activateUpi">Activate Now →</button>
+            </div>
+            <div class="upi-right">
+                <span class="upi-label">Your UPI ID</span>
+                <div class="upi-id-row">
+                    <code class="upi-id">c.n@ptyes</code>
+                    <button class="copy-btn" id="copyUpiBtn" aria-label="Copy UPI ID">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <section class="card-section animate-in" style="animation-delay: 0.1s">
+            <div class="quick-actions-grid">
+                <button class="action-card" data-modal="scan">
+                    <div class="action-icon"><img src="images/scan.png" alt="Scan & Pay"></div>
+                    <span class="action-label">Scan & Pay</span>
+                </button>
+                <button class="action-card" data-modal="mobile">
+                    <div class="action-icon"><img src="images/mobile.png" alt="To Mobile"></div>
+                    <span class="action-label">To Mobile</span>
+                </button>
+                <button class="action-card" data-modal="bank">
+                    <div class="action-icon"><img src="images/bank.png" alt="To Bank"></div>
+                    <span class="action-label">To Bank / UPI</span>
+                </button>
+                <button class="action-card" data-modal="self">
+                    <div class="action-icon"><img src="images/self.png" alt="To Self"></div>
+                    <span class="action-label">To Self A/c</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Balance & Refer Row -->
+        <section class="features-row animate-in" style="animation-delay: 0.15s">
+            <button class="feature-card" id="balanceCard">
+                <div class="feature-icon"><img src="images/balance.png" alt="Balance"></div>
+                <div class="feature-info">
+                    <span class="feature-title">Check Balance</span>
+                    <span class="feature-sub">& History</span>
+                </div>
+                <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <button class="feature-card accent" id="referCard">
+                <div class="feature-icon"><img src="images/refer.png" alt="Refer"></div>
+                <div class="feature-info">
+                    <span class="feature-title">Refer & Get</span>
+                    <span class="feature-sub highlight">₹100 Cashback</span>
+                </div>
+                <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </section>
+
+        <!-- Recharges & Bill Payments -->
+        <section class="card-section animate-in" style="animation-delay: 0.2s">
+            <div class="section-header">
+                <h2>Recharges & Bill Payments</h2>
+                <a href="#" class="see-all">See All →</a>
+            </div>
+            <div class="options-grid">
+                <button class="option-card" data-modal="recharge">
+                    <div class="option-icon"><img src="images/mobile-recharge.png" alt="Mobile Recharge"></div>
+                    <span>Mobile Recharge</span>
+                </button>
+                <button class="option-card" data-modal="credit-card">
+                    <div class="option-icon"><img src="images/credit-card.png" alt="Credit Card"></div>
+                    <span>Credit Card</span>
+                </button>
+                <button class="option-card" data-modal="electricity">
+                    <div class="option-icon"><img src="images/electricity.png" alt="Electricity"></div>
+                    <span>Electricity</span>
+                </button>
+                <button class="option-card" data-modal="fastag">
+                    <div class="option-icon"><img src="images/fastag.png" alt="FASTag"></div>
+                    <span>FASTag</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Offers Row -->
+        <section class="features-row animate-in" style="animation-delay: 0.25s">
+            <button class="feature-card" id="cashbackCard">
+                <div class="feature-icon"><img src="images/cashback.png" alt="Cashback"></div>
+                <div class="feature-info">
+                    <span class="feature-title">Cashback</span>
+                    <span class="feature-sub">& Offers</span>
+                </div>
+                <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <button class="feature-card" id="creditScoreCard">
+                <div class="feature-icon"><img src="images/credit-score.png" alt="Credit Score"></div>
+                <div class="feature-info">
+                    <span class="feature-title">Credit Score</span>
+                    <span class="feature-sub">Check Free</span>
+                </div>
+                <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </section>
+
+        <!-- Do More with Paytm -->
+        <section class="card-section animate-in" style="animation-delay: 0.3s">
+            <div class="section-header">
+                <h2>Do More with Paytm</h2>
+                <a href="#" class="see-all">See All →</a>
+            </div>
+            <div class="options-grid">
+                <button class="option-card" data-modal="loan">
+                    <div class="option-icon"><img src="images/loan.png" alt="Personal Loan"></div>
+                    <span>Personal Loan</span>
+                </button>
+                <button class="option-card" data-modal="credit-carnival">
+                    <div class="option-icon"><img src="images/credit-card-carnival.png" alt="Credit Card Carnival"></div>
+                    <span>Card Carnival</span>
+                </button>
+                <button class="option-card" data-modal="paytm-money">
+                    <div class="option-icon"><img src="images/paytm-money.png" alt="Paytm Money"></div>
+                    <span>Paytm Money</span>
+                </button>
+                <button class="option-card" data-modal="sip">
+                    <div class="option-icon"><img src="images/sip1.png" alt="SIP"></div>
+                    <span>SIP @ ₹250</span>
+                </button>
+                <button class="option-card" data-modal="gold">
+                    <div class="option-icon"><img src="images/gold.png" alt="Gold"></div>
+                    <span>Buy Gold</span>
+                </button>
+                <button class="option-card" data-modal="movies">
+                    <div class="option-icon"><img src="images/movies.png" alt="Movies"></div>
+                    <span>Movies</span>
+                </button>
+                <button class="option-card" data-modal="all-services">
+                    <div class="option-icon"><img src="images/all-services.png" alt="All Services"></div>
+                    <span>All Services</span>
+                </button>
+                <button class="option-card" data-modal="all-services-alt">
+                    <div class="option-icon"><img src="images/all-services1.png" alt="More"></div>
+                    <span>More</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Spacer for bottom nav -->
+        <div class="bottom-spacer"></div>
+    </main>
+
+    <!-- ═══════════════════ MODAL SYSTEM ═══════════════════ -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <h3 id="modalTitle">Service</h3>
+            <button class="modal-close" id="modalClose">✕</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Dynamic content -->
+        </div>
+    </div>
+
+    <!-- ═══════════════════ TOAST ═══════════════════ -->
+    <div class="toast" id="toast"></div>
+
+    <!-- ═══════════════════ BOTTOM NAVIGATION ═══════════════════ -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item active" data-tab="home" aria-label="Home">
+            <img src="images/home.png" alt="Home">
+            <span>Home</span>
+        </button>
+        <button class="nav-item" data-tab="cashback" aria-label="Cashback">
+            <img src="images/cashback.png" alt="Cashback">
+            <span>Cashback</span>
+        </button>
+        <button class="nav-item scan-nav-item" data-tab="scan" aria-label="Scan QR">
+            <div class="scan-fab">
+                <img src="images/scan-qr.png" alt="Scan QR">
+            </div>
+            <span>Scan QR</span>
+        </button>
+        <button class="nav-item" data-tab="ai" aria-label="Ask AI">
+            <img src="images/ask-ai.png" alt="Ask AI">
+            <span>Ask AI</span>
+        </button>
+        <button class="nav-item" data-tab="services" aria-label="All Services">
+            <img src="images/all-services.png" alt="All Services">
+            <span>Services</span>
+        </button>
+        <div class="nav-indicator" id="navIndicator"></div>
+    </nav>
+    </div> <!-- /appContainer -->
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytm UI Clone</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #002f6c;
+            color: white;
+            padding: 15px;
+        }
+
+        .profile .circle{
+            width: 40px;
+            height: 40px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .title span {
+            background: #29b6f6;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .notifications {
+            position: relative;
+        }
+
+        .notifications .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 50%;
+        }
+
+        .upi-section {
+            background: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .upi-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            background: white;
+            padding: 10px 0;
+        }
+
+        .service img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .feature img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .section {
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .option img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .bottom-menu {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd;
+        }
+
+        .menu-item img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="profile">
+            <div class="circle">BR</div>
+            </div>
+        <div class="title">JanNivesh <span>SIP</span></div>
+    </div>
+
+    <div class="upi-section">
+        <span>UPI Lite:</span> <a href="#">Activate</a>
+        <div class="upi-id">UPI: c.n@ptyes</div>
+    </div>
+
+    <div class="services">
+        <div class="service"><img src="scan.png" alt="Scan & Pay"><br>Scan & Pay</div>
+        <div class="service"><img src="mobile.png" alt="To Mobile"><br>To Mobile or Contact</div>
+        <div class="service"><img src="bank.png" alt="To Bank"><br>To Bank A/c or UPI ID</div>
+        <div class="service"><img src="self.png" alt="To Self"><br>To Self A/c</div>
+    </div>
+
+    <div class="features">
+        <div class="feature"><img src="balance.png" alt="Balance"><br>Check Balance & History</div>
+        <div class="feature"><img src="refer.png" alt="Refer"><br>Refer & Get ₹100</div>
+    </div>
+
+    <div class="section">
+        <h3>Recharges & Bill Payments</h3>
+        <div class="options">
+            <div class="option"><img src="mobile-recharge.png" alt="Mobile Recharge"><br>Mobile Recharge</div>
+            <div class="option"><img src="credit-card.png" alt="Credit Card"><br>Credit Card Home</div>
+            <div class="option"><img src="electricity.png" alt="Electricity"><br>Electricity Bill</div>
+            <div class="option"><img src="fastag.png" alt="FASTag"><br>FASTag Recharge</div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature"><img src="cashback.png" alt="Cashback"><br>Cashback & Offers</div>
+        <div class="feature"><img src="credit-score.png" alt="Credit Score"><br>Free Credit Score</div>
+    </div>
+
+    <div class="section">
+        <h3>Do More with Paytm</h3>
+        <div class="options">
+            <div class="option"><img src="loan.png" alt="Loan"><br>Personal Loan</div>
+            <div class="option"><img src="credit-card-carnival.png" alt="Credit Card Carnival"><br>Credit Card Carnival</div>
+            <div class="option"><img src="paytm-money.png" alt="Paytm Money"><br>Paytm Money</div>
+            <div class="option"><img src="sip1.png" alt="SIP"><br>JanNivesh SIP @ ₹250</div>
+            <div class="option"><img src="travel.png" alt="Travel"><br>Flight, Bus & Train</div>
+            <div class="option"><img src="gold.png" alt="Gold"><br>Buy Gold</div>
+            <div class="option"><img src="movies.png" alt="Movies"><br>Movies & Events</div>
+            <div class="option"><img src="all-services.png" alt="All Services"><br>All Services</div>
+        </div>
+    </div>
+
+    <div class="bottom-menu">
+        <div class="menu-item"><img src="home.png" alt="Home"><br>Home</div>
+        <div class="menu-item"><img src="cashback.png" alt="Cashback"><br>Cashback</div>
+        <div class="menu-item"><img src="scan-qr.png" alt="Scan"><br>Scan Any QR</div>
+        <div class="menu-item"><img src="ask-ai.png" alt="Ask AI"><br>Ask AI</div>
+        <div class="menu-item"><img src="all-services.png" alt="All"><br>All Services</div>
+    </div>
+
+</body>
+</html>
